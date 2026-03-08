@@ -1,4 +1,4 @@
-import { Image } from 'lucide-react';
+
 
 const Gallery = () => {
   const images = [
@@ -6,31 +6,37 @@ const Gallery = () => {
       title: 'Cristalografia de Raios X',
       description: 'Técnica pioneira usada por Franklin',
       gradient: 'from-blue-600 to-purple-600',
+      img: "/images/raiosx.jpg"
     },
     {
       title: 'Estrutura do DNA',
       description: 'A dupla hélice revelada',
       gradient: 'from-purple-600 to-pink-600',
+      img: "/images/dna.jpg"
     },
     {
       title: 'Laboratório dos Anos 50',
       description: 'Ambiente de trabalho da época',
       gradient: 'from-pink-600 to-red-600',
+      img: "/images/laboratorio.jpg"
     },
     {
       title: 'Moléculas e Vírus',
       description: 'Outras pesquisas de Franklin',
       gradient: 'from-red-600 to-orange-600',
+      img: "/images/virus.jpg"
     },
     {
       title: 'Padrão de Difração',
       description: 'A famosa Foto 51',
       gradient: 'from-orange-600 to-yellow-600',
+      img: "/images/foto51.jpg"
     },
     {
       title: 'Legado Científico',
       description: 'Impacto na ciência moderna',
       gradient: 'from-yellow-600 to-green-600',
+      img: "/images/legado.jpg"
     },
   ];
 
@@ -52,12 +58,17 @@ const Gallery = () => {
               key={index}
               className="group relative overflow-hidden rounded-xl aspect-video cursor-pointer"
             >
+               <img
+  src={item.img}
+  alt={item.title}
+  className="absolute inset-0 w-full h-full object-cover"
+/>
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-80 group-hover:opacity-100 transition-opacity duration-300`}
               />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                <Image className="w-16 h-16 text-white mb-4 group-hover:scale-110 transition-transform duration-300" />
+               
                 <h3 className="text-xl font-bold text-white mb-2">
                   {item.title}
                 </h3>
